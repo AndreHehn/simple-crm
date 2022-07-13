@@ -6,9 +6,9 @@
             <th>City</th>
         </tr>
         <tr *ngFor="let user of allUsers" [routerLink]="['/user/' + user.customIdName]">
-            <td>{{user.firstName}}{{user.lastName}}</td>
+            <td>{{user.firstName}}&nbsp;{{user.lastName}}</td>
             <td>{{user.email}}</td>
-            <td>{{user.city}}/td>
+            <td>{{user.city}}</td>
         </tr>
     </table>
 </mat-card>
