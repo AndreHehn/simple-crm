@@ -10,9 +10,9 @@ import { User } from '../models/user.class';
 })
 export class DialogEditAddressComponent implements OnInit {
 
-  user: User;
+  user: User = new User();
   loading = false;
-  userId: string;
+  userId: string = '';
 
   constructor(private firestore: AngularFirestore,
     public dialogRef: MatDialogRef<DialogEditAddressComponent>) { }

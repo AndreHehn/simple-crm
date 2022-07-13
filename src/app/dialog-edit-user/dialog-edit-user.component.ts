@@ -10,10 +10,10 @@ import { User } from '../models/user.class';
 })
 export class DialogEditUserComponent implements OnInit {
 
-  user: User;
+  user: User = new User();
   loading = false;
-  birthDate: Date;
-  userId: string;
+  birthDate: Date = new Date();
+  userId: string = '';
 
   constructor(private firestore: AngularFirestore,
     public dialogRef: MatDialogRef<DialogEditUserComponent>) { }

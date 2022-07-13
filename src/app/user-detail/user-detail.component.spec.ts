@@ -1,4 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 import { UserDetailComponent } from './user-detail.component';
 
@@ -8,9 +14,14 @@ describe('UserDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserDetailComponent ]
+      declarations: [UserDetailComponent],
+      imports: [
+        MatDialogModule,
+        AngularFireModule.initializeApp(environment.firebase),MatMenuModule,
+        AngularFirestoreModule, RouterModule.forRoot([])
+      ],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(UserDetailComponent);
     component = fixture.componentInstance;
